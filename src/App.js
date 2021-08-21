@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 const Child = () => {
   console.log('%c    Child: render start', 'color: MediumSpringGreen');
@@ -11,80 +11,60 @@ const Child = () => {
   useEffect(() => {
     console.log('%c    Child: useEffect(() => {})', 'color: LightCoral');
     return () => {
-      console.log(
-        '%c    Child: useEffect(() => {}) cleanup ?完',
-        'color: LightCoral',
-      );
-    }
-  })
+      console.log('%c    Child: useEffect(() => {}) cleanup', 'color: LightCoral');
+    };
+  });
 
   useEffect(() => {
-    console.log(
-      '%c    Child: useEffect(() => {}, [])',
-      'color: MediumTurquoise',
-    );
+    console.log('%c    Child: useEffect(() => {}, [])', 'color: MediumTurquoise');
     return () => {
-      console.log(
-        '%c    Child: useEffect(() => {}, []) cleanup ?完',
-        'color: MediumTurquoise',
-      );
-    }
+      console.log('%c    Child: useEffect(() => {}, []) cleanup', 'color: MediumTurquoise');
+    };
   }, []);
 
   useEffect(() => {
     console.log('%c    Child: useEffect(() => {}, [count])', 'color: HotPink');
     return () => {
-      console.log(
-        '%c    Child: useEffect(() => {}, [count]) cleanup ?完',
-        'color: HotPink',
-      );
-    }
+      console.log('%c    Child: useEffect(() => {}, [count]) cleanup', 'color: HotPink');
+    };
   }, [count]);
 
   const element = (
-    <button onClick={() => setCount(previousCount => previousCount + 1)}>
-      {count}
-    </button>
+    <button onClick={() => setCount((previousCount) => previousCount + 1)}>{count}</button>
   );
 
   console.log('%c    Child: render end', 'color: MediumSpringGreen');
 
   return element;
-}
+};
 
 const App = () => {
   console.log('%cApp: render start', 'color: MediumSpringGreen');
 
   const [showChild, setShowChild] = useState(() => {
     console.log('%cApp: useState(() => false)', 'color: tomato');
-    return false
+    return false;
   });
 
   useEffect(() => {
-    console.log('%cApp: useEffect(() => {})', 'color: LightCoral')
+    console.log('%cApp: useEffect(() => {})', 'color: LightCoral');
     return () => {
-      console.log('%cApp: useEffect(() => {}) cleanup ?完', 'color: LightCoral');
-    }
+      console.log('%cApp: useEffect(() => {}) cleanup', 'color: LightCoral');
+    };
   });
 
   useEffect(() => {
     console.log('%cApp: useEffect(() => {}, [])', 'color: MediumTurquoise');
     return () => {
-      console.log(
-        '%cApp: useEffect(() => {}, []) cleanup ?完',
-        'color: MediumTurquoise',
-      );
-    }
+      console.log('%cApp: useEffect(() => {}, []) cleanup', 'color: MediumTurquoise');
+    };
   }, []);
 
   useEffect(() => {
     console.log('%cApp: useEffect(() => {}, [showChild])', 'color: HotPink');
     return () => {
-      console.log(
-        '%cApp: useEffect(() => {}, [showChild]) cleanup ?完',
-        'color: HotPink',
-      );
-    }
+      console.log('%cApp: useEffect(() => {}, [showChild]) cleanup', 'color: HotPink');
+    };
   }, [showChild]);
 
   const element = (
@@ -93,7 +73,7 @@ const App = () => {
         <input
           type="checkbox"
           checked={showChild}
-          onChange={e => setShowChild(e.target.checked)}
+          onChange={(e) => setShowChild(e.target.checked)}
         />
         show child
       </label>
@@ -109,11 +89,11 @@ const App = () => {
         {showChild ? <Child /> : null}
       </div>
     </>
-  )
+  );
 
   console.log('%cApp: render end', 'color: MediumSpringGreen');
 
   return element;
-}
+};
 
 export default App;
