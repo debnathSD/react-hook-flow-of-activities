@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "prettier"],
+  "extends": ["prettier"],
   "env": {
     "es6": true,
     "jest": true,
@@ -34,15 +34,6 @@
     "react/jsx-wrap-multilines": "off",
     "react/jsx-indent": "off",
     "function-paren-newline": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "json": "never",
-        "jsx": "never"
-      }
-    ],
     "arrow-parens": ["warn", "as-needed"],
     "max-len": 0,
     "comma-dangle": ["error", "never"],
@@ -50,10 +41,6 @@
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "object-property-newline": ["error", { "allowAllPropertiesOnSameLine": true }],
     "no-underscore-dangle": "off",
-    "import/no-extraneous-dependencies": [
-      "error",
-      { "devDependencies": ["**/*.test.js", "**/*Spec.js"] }
-    ],
     "react/forbid-prop-types": [
       "error",
       {
