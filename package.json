@@ -20,7 +20,7 @@
     "eject": "react-scripts eject",
     "lint-fix": "eslint --fix .",
     "lint-check": "eslint .",
-    "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{js,css,html}\""
+    "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{js,json}\""
   },
   "eslintConfig": {
     "extends": [
@@ -48,14 +48,12 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.3.2"
   },
-  "lint-staged": {
-    "src/**/*.{js,css,html}": [
-        "yarn run prettier:check"
-    ]
-  },
   "husky": {
     "hooks": {
-        "pre-commit": "yarn run prettier:check"
+      "pre-commit": "lint-staged"
     }
-}
+  },
+  "lint-staged": {
+    "*.{js,json}": "prettier --write"
+  }
 }
