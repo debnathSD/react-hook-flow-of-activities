@@ -20,7 +20,8 @@
     "eject": "react-scripts eject",
     "lint-fix": "eslint --fix .",
     "lint-check": "eslint .",
-    "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{js,json}\""
+    "prettier:write": "prettier --write **/*.{js,json} && echo ==Prettier:Write Completed for RHF",
+    "prettier:check": "prettier --check **/*.{js,json} && echo ==Prettier:Check Completed for RHF"
   },
   "eslintConfig": {
     "extends": [
