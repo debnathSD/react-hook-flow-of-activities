@@ -37,9 +37,15 @@
     "arrow-parens": ["warn", "as-needed"],
     "max-len": 0,
     "comma-dangle": ["error", "never"],
-    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["window"] }],
+    "no-param-reassign": [
+      "error",
+      { "props": true, "ignorePropertyModificationsFor": ["window"] }
+    ],
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "object-property-newline": ["error", { "allowAllPropertiesOnSameLine": true }],
+    "object-property-newline": [
+      "error",
+      { "allowAllPropertiesOnSameLine": true }
+    ],
     "no-underscore-dangle": "off",
     "react/forbid-prop-types": [
       "error",
