@@ -1,17 +1,8 @@
 import { combineReducers } from 'redux';
-
-const initialState = {
-  yo: '123'
-};
-
-const root = (action, state = initialState) => {
-  return initialState;
-};
+import paintReducer from './paintReducer';
 
 const rootReducer = combineReducers({
-  root
-  //reducer1,
-  //reducer2,
+  paintReducer
   // Future planning
   //...
 });
