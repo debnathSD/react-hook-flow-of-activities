@@ -8,7 +8,7 @@ import reducers from './reducers';
 
 const rootPersistConfig = {
   key: 'sourav',
-  storage: sessionStorage,
+  storage: sessionStorage
 };
 
 const customReducer = persistReducer(rootPersistConfig, reducers);
@@ -21,6 +21,6 @@ export default () => {
   const persistor = persistStore(store);
   return {
     store,
-    persistor,
+    persistor
   };
 };

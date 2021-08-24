@@ -98,7 +98,7 @@ const App = () => {
           margin: 10,
           height: 50,
           width: 50,
-          border: 'solid',
+          border: 'solid'
         }}
       >
         {showChild ? <Child /> : null}

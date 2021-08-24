@@ -3,10 +3,13 @@ import { paintActions } from '../actions/PaintActions/PaintActionsTypes';
 
 const paintReducer = (state = initialState, action) => {
   switch (action.type) {
-    case paintActions.PUSH_ITEM_TO_STORE: {
+    case paintActions.PUSH_ITEM_TO_STORE_ON_INITIAL_RENDER: {
       return {
         ...state,
-        paintItems: [...state.paintItems, action.payload],
+        paintItemsOnInitialLoad: [
+          ...state.paintItemsOnInitialLoad,
+          action.payload
+        ]
       };
     }
     default:
