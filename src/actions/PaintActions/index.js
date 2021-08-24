@@ -5,4 +5,9 @@ const paintFromControlFlow = value => ({
   payload: value
 });
 
-export { paintFromControlFlow };
+const clearPaintArray = value => ({
+    type: paintActions.CLEAR_PAINT_ARRAY,
+    payload: value
+})
+
+export { paintFromControlFlow, clearPaintArray };

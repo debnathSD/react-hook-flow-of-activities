@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { paintFromControlFlow } from './actions/PaintActions';
+import ClearStore from './Components/ClearStore';
 import PaintSteps from './Components/PaintSteps';
 
 const Child = () => {
@@ -103,6 +104,7 @@ const App = () => {
       >
         {showChild ? <Child /> : null}
       </div>
+      <ClearStore />
     </>
   );
 

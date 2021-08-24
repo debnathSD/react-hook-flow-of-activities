@@ -12,6 +12,12 @@ const paintReducer = (state = initialState, action) => {
         ]
       };
     }
+    case paintActions.CLEAR_PAINT_ARRAY: {
+      return {
+        ...state,
+        paintItemsOnInitialLoad: action.payload
+      };
+    }
     default:
       return state;
   }
