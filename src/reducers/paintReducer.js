@@ -8,14 +8,14 @@ const paintReducer = (state = initialState, action) => {
         ...state,
         paintItemsOnInitialLoad: [
           ...state.paintItemsOnInitialLoad,
-          action.payload
-        ]
+          action.payload,
+        ],
       };
     }
     case paintActions.CLEAR_PAINT_ARRAY: {
       return {
         ...state,
-        paintItemsOnInitialLoad: action.payload
+        paintItemsOnInitialLoad: action.payload,
       };
     }
     default:

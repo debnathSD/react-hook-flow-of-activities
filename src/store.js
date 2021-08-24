@@ -8,19 +8,24 @@ import reducers from './reducers';
 
 const rootPersistConfig = {
   key: 'sourav',
-  storage: sessionStorage
+  storage: sessionStorage,
 };
 
 const customReducer = persistReducer(rootPersistConfig, reducers);
 
+const customMiddleWare = store => next => action => {
+  // console.log("Action triggered:", action);
+  next(action);
+};
+
 export default () => {
   const store = createStore(
     customReducer,
-    composeWithDevTools(applyMiddleware(thunk))
+    composeWithDevTools(applyMiddleware(thunk, customMiddleWare))
   );
   const persistor = persistStore(store);
   return {
     store,
-    persistor
+    persistor,
   };
 };
