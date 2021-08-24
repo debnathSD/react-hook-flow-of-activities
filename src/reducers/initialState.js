@@ -1,6 +1,6 @@
 const initialState = {
   yo: '123',
-  paintItemsOnInitialLoad: []
+  paintItemsOnInitialLoad: [],
 };
 
 export default initialState;
